@@ -1,6 +1,7 @@
 //Mini project _ Café order manager 
 
 //step 1 
+console.log("-------------------------------------")
 let menu = [
     {name:"Espresso" , price: 12, category : "Coffee"},
     {name:"Cappuccino" , price:18 , category : "Coffee"},
@@ -18,6 +19,7 @@ Croissant - 10 MAD
 */
 
 //step 2 
+console.log("-------------------------------------")
 function findMenuItem(list , itemName){
     for(let item of list){
         if(item.name === itemName){
@@ -33,6 +35,7 @@ console.log(findMenuItem(menu, "Cappucno"));
 //else return null
 
 //step 3 
+console.log("-------------------------------------")
 menu.push({ name: "Muffin", price: 14, category: "Pastry" });
 
 console.log(menu.length);
@@ -41,6 +44,7 @@ console.log(menu.length);
 //and print the length of array
 
 //step 4 
+console.log("-------------------------------------")
 function updatePrice(list , itemName , newPrice){
     let item = findMenuItem(list , itemName);
 
@@ -57,4 +61,19 @@ console.log(updatePrice(menu , "Esprso", 56));
 //we use the function in step 2
 
 
-//
+//step 5 
+console.log("-------------------------------------")
+let orders = [
+    {customer : "Yassine" , item : "Espresso" , quantity : 2, status : "Pending"},
+    {customer : "Sara" , item : "Cappuccino" , quantity : 1, status : "Completed"},
+    {customer : "Omar" , item : "Croissant" , quantity : 1, status : "Pending"},
+    {customer : "Nadia" , item : "Espresso" , quantity : 1, status : "Completed"},
+    {customer : "Imane" , item : "Muffin" , quantity :2 , status : "Pending"}
+];
+
+console.log(orders.length);
+
+//step 6
+
+console.log("-------------------------------------");
+
