@@ -44,10 +44,17 @@ console.log(menu.length);
 function updatePrice(list , itemName , newPrice){
     let item = findMenuItem(list , itemName);
 
-    if (item === null) return;
+    if (item === null) return false;
     item.price = newPrice;
+
+    return true;
     
 }
-updatePrice(menu , "Espresso", 56)
 
-console.log(menu)
+console.log(updatePrice(menu , "Esprso", 56));
+
+//on this step we change the price of item search by name
+//we use the function in step 2
+
+
+//
