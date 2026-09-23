@@ -39,3 +39,15 @@ console.log(menu.length);
 
 //on this step we add an object to the array 
 //and print the length of array
+
+//step 4 
+function updatePrice(list , itemName , newPrice){
+    let item = findMenuItem(list , itemName);
+
+    if (item === null) return;
+    item.price = newPrice;
+    
+}
+updatePrice(menu , "Espresso", 56)
+
+console.log(menu)
