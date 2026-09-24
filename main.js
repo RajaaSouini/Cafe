@@ -106,6 +106,17 @@ console.log(getPendingOrders(orders));
 
 //cette derniere fonction retourne un autre tableau dans lequel on stoque les objet
 //dont le status = 'pending'
+console.log("-------------------------------------");
+//step 8 
+function statusSummary(orderList){
+    let x = getPendingOrders(orderList).length;
+    let y = orderList.length - x;
+
+    return  `Completed: ${x}, Pending: ${y}`
+}
+console.log(statusSummary(orders));
+//we print count of completed orders and pending orders
+//we use the following function 
 
 
 
