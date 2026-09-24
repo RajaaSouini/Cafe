@@ -117,6 +117,30 @@ function statusSummary(orderList){
 console.log(statusSummary(orders));
 //we print count of completed orders and pending orders
 //we use the following function 
+console.log("-------------------------------------");
+//step 9 
+function quantityPerItem(orderList){
+    let totals = {};
+    //on a trouver les occurences et faire la somme de la quantite des occurences
+    for(let i = 0 ; i < orderList.length ; i++){
+        let item = orderList[i].item;
+            if(item in totals === false){
+                totals[item] = orderList[i].quantity
+
+               for(let j = i+1 ; j < orderList.length ; j++){
+
+                if(item === orderList[j].item)
+                    totals[item] += orderList[j].quantity
+                    
+                } 
+            }
+    }
+    return totals;
+}
+//the output is { Espresso: 3, Cappuccino: 1, Croissant: 1, Muffin: 2 }
+
+
+console.log(quantityPerItem(orders));
 
 
 
