@@ -181,9 +181,10 @@ console.log(orders.length);
 console.log(totalRevenue(orders, menu));
 console.log(statusSummary(orders));
 //we add a sixth order and we check ..
-
+console.log("-------------------------------------");
 //step 12
 function cancelOrder(orderList, customerName, itemName) {
+    let secondAttemp = {orderList, wasRemoved : false};
     for (let i = 0; i < orderList.length; i++) {
         if (orderList[i].customer === customerName && orderList[i].item === itemName) {
             
@@ -192,14 +193,33 @@ function cancelOrder(orderList, customerName, itemName) {
             }
 
             orderList.pop();
-            return true; 
+            secondAttemp.wasRemoved = true;
+             
         }
     }
-    return false; 
+    return secondAttemp ; 
 }
 
 console.log(cancelOrder(orders, "Omar", "Croissant"));
-console.log(orders);
+
+//on supprime order du tableau 
+
+console.log("____________________________________");
+
+/*tet de la fonction 
+
+let secondAttempt = cancelOrder(orders, "Ghost", "Nothing");
+console.log(secondAttempt.wasRemoved);
+console.log(secondAttempt.orderList.length);
+
+let cancelResult = cancelOrder(orders, "Omar", "Croissant");
+console.log(cancelResult.wasRemoved);
+console.log(cancelResult.orderList.length);
+orders = cancelResult.orderList;
+console.log(statusSummary(orders));
+console.log(totalRevenue(orders, menu));*/
+
+//step 13 
 
 
 
