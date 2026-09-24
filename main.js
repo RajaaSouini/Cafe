@@ -174,6 +174,14 @@ console.log(orders);
 //we change status from pending to completed so counter of completed change
 //the output is Completed: 3, Pending: 2 / true or false
 
+console.log("-------------------------------------");
+//step 11
+orders.push({ customer: "Khalid", item: "Cappuccino", quantity: 3, status: "Pending" });
+console.log(orders.length);
+console.log(totalRevenue(orders, menu));
+console.log(statusSummary(orders));
+//we add a sixth order and we check ..
+
 
 
 
