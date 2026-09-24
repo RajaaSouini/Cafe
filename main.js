@@ -182,6 +182,25 @@ console.log(totalRevenue(orders, menu));
 console.log(statusSummary(orders));
 //we add a sixth order and we check ..
 
+//step 12
+function cancelOrder(orderList, customerName, itemName) {
+    for (let i = 0; i < orderList.length; i++) {
+        if (orderList[i].customer === customerName && orderList[i].item === itemName) {
+            
+            for (let j = i; j < orderList.length - 1; j++) {
+                orderList[j] = orderList[j + 1];
+            }
+
+            orderList.pop();
+            return true; 
+        }
+    }
+    return false; 
+}
+
+console.log(cancelOrder(orders, "Omar", "Croissant"));
+console.log(orders);
+
 
 
 
