@@ -159,9 +159,9 @@ console.log(mostOrderedItem(result))
 console.log("-------------------------------------");
 //step 10
 function markOrderCompleted(orderList , customerName , itemName){
-    let pendingOrders = getPendingOrders(orderList);
-    for(let item of pendingOrders){
-        if(item.customer == customerName && item.status == 'Pending'){
+    
+    for(let item of orderList){
+        if(item.customer == customerName && item.status == 'Pending' && item.item == itemName){
             item.status = 'Completed';
             return true;
         }
@@ -169,8 +169,8 @@ function markOrderCompleted(orderList , customerName , itemName){
     return false;
 }
 
-
-console.log(markOrderCompleted(orders, "Yasine", "Espresso"));
+console.log(markOrderCompleted(orders, "Omar", "Croissant"));
+console.log(orders);
 //we change status from pending to completed so counter of completed change
 //the output is Completed: 3, Pending: 2 / true or false
 
