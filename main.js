@@ -29,7 +29,7 @@ function findMenuItem(list , itemName){
     return null;
 }
 
-console.log(findMenuItem(menu, "Cappucno"));
+console.log(findMenuItem(menu, "Cappuccino"));
 
 //this function return the item(objet) if the name exsit in the table
 //else return null
@@ -155,6 +155,24 @@ function mostOrderedItem(totalsObj){
 } 
 console.log(mostOrderedItem(result))
 //the output is Espresso (3)
+
+console.log("-------------------------------------");
+//step 10
+function markOrderCompleted(orderList , customerName , itemName){
+    let pendingOrders = getPendingOrders(orderList);
+    for(let item of pendingOrders){
+        if(item.customer == customerName && item.status == 'Pending'){
+            item.status = 'Completed';
+            return true;
+        }
+    }
+    return false;
+}
+
+
+console.log(markOrderCompleted(orders, "Yasine", "Espresso"));
+//we change status from pending to completed so counter of completed change
+//the output is Completed: 3, Pending: 2 / true or false
 
 
 
