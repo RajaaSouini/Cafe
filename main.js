@@ -138,9 +138,26 @@ function quantityPerItem(orderList){
     return totals;
 }
 //the output is { Espresso: 3, Cappuccino: 1, Croissant: 1, Muffin: 2 }
+let result = quantityPerItem(orders);
+
+console.log(result);
+
+console.log("-------------------------------------");
+//step 9b
+function mostOrderedItem(totalsObj){
+    let max = totalsObj["Espresso"];
+    for (const cle in totalsObj) {
+        if(totalsObj[cle] >max){
+            max = totalsObj[cle]
+        }
+        return `${cle} (${totalsObj[cle]})`
+    } 
+} 
+console.log(mostOrderedItem(result))
+//the output is Espresso (3)
 
 
-console.log(quantityPerItem(orders));
+
 
 
 
