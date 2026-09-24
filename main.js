@@ -76,4 +76,36 @@ console.log(orders.length);
 //step 6
 
 console.log("-------------------------------------");
+function totalRevenue(orderList , menuList){
+    let sum = 0 ; 
+    for(let i of orderList){
+        if(i.status === "Completed"){
+            let item = findMenuItem(menuList , i.item);
+            sum += item.price * i.quantity;
+        }
+    }
+    return sum;
+}
+console.log(totalRevenue(orders , menu));
+
+//cette derniere return the money made today
+//30
+
+console.log("-------------------------------------");
+//step 7 
+function getPendingOrders(orderList){
+    let arr = [];
+    for(let order of orderList){
+        if(order.status === 'Pending' ){
+            arr.push(order);
+        }
+    }
+    return arr;
+}
+console.log(getPendingOrders(orders));
+
+//cette derniere fonction retourne un autre tableau dans lequel on stoque les objet
+//dont le status = 'pending'
+
+
 
